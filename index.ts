@@ -1,5 +1,13 @@
+import { load } from "https://deno.land/std@0.224.0/dotenv/mod.ts";
+
 import { Pinecone } from '@pinecone-database/pinecone';
 import OpenAI from 'openai';
+
+
+const env = await load();
+const PINECONE_API_KEY = env['PINECONE_API_KEY']
+const OPENAI_API_KEY = env['OPENAI_API_KEY']
+
 
 export const openai = new OpenAI({
   apiKey: OPENAI_API_KEY,
