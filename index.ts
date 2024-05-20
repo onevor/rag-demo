@@ -6,6 +6,7 @@ import OpenAI from 'openai';
 
 const env = await load();
 const PINECONE_API_KEY = env['PINECONE_API_KEY']
+const PINECONE_INDEX = env['PINECONE_INDEX']
 const OPENAI_API_KEY = env['OPENAI_API_KEY']
 
 
@@ -17,7 +18,7 @@ export const pc = new Pinecone({
   apiKey: PINECONE_API_KEY as string,
 });
 
-export const index = pc.index('startup-demo');
+export const index = pc.index(PINECONE_INDEX);
 
 export async function createEmbeddings(text: string) {
   return openai.embeddings.create({
