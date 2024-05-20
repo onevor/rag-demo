@@ -3,10 +3,10 @@
 2. An account with Pinecone and an index setup
 
 # Run it
-`deno run -A main.ts Where is my cat\?`
+`deno run -A src/main.ts Where is my cat\?`
 
 
 # Create KB
-`deno run -A store.ts`
+`deno run -A src/store.ts`
 
 
