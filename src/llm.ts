@@ -26,7 +26,7 @@ export const writeHistory = async (fileName: string, data: any) => await Deno.wr
 export function createQ(question: string, knowledgeBase: string) {
   return {
     role: 'user',
-    content: `Question: ${question}\nKnowledgeBase:\n${knowledgeBase}`,
+    content: `Question: ${question}\ncontext:\n${knowledgeBase}`,
   };
 }
 
